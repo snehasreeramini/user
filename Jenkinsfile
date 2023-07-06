@@ -1,15 +1,4 @@
-pipeline{
-  agent any
+@Library('roboshop-shared-library@main')
 
-  stages {
-    //for each commit
-     stage('Lint Checks'){
-        steps {
-          sh '''
-          # ~/node_modules/jslint/bin/jslint.js server.js
-           echo Lint Check
-           '''
-        }
-     }
-  } //end of stages
-}
+env.COMPONENT='USER'
+nodejs()
